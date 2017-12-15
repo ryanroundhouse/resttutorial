@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from tutorial.quickstart.serializers import UserSerializer, GroupSerializer
+from tutorial.quickstart.serializers import UserSerializer, GroupSerializer, HappinessSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -17,3 +17,10 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class HappinessViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows happiness to be viewed and added.
+    """
+    queryset = Group.objects.all()
+    serializer_class = HappinessSerializer
